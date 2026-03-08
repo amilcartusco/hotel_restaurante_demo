@@ -1,0 +1,116 @@
+:root {
+    --oro: #c5a059;
+    --negro: #121212;
+    --crema: #fdfbf7;
+    --serif: 'Playfair Display', serif;
+    --sans: 'Montserrat', sans-serif;
+}
+#fondo{
+    background-color: #ffffff6e;
+}
+#titu{
+      font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body { font-family: var(--sans); background-color: var(--crema); overflow-x: hidden; }
+
+.serif { font-family: var(--serif); }
+.italic-serif { font-family: var(--serif); font-style: italic; }
+.text-gold { color: var(--oro); }
+.border-gold { border-color: var(--oro) !important; opacity: 1; }
+.ls-3 { letter-spacing: 3px; }
+.ls-5 { letter-spacing: 5px; }
+
+.logo { font-family: var(--serif); font-weight: bold; letter-spacing: 3px; font-size: 1.5rem; text-transform: uppercase; color: var(--negro); }
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* El efecto de la imagen al precionar*/
+.luxury-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 450px;
+}
+
+.luxury-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.luxury-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(18, 18, 18, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.overlay-inner {
+    color: white;
+    text-align: center;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.luxury-card:hover img, .luxury-card.active img { transform: scale(1.1); }
+.luxury-card:hover .luxury-overlay, .luxury-card.active .luxury-overlay { opacity: 1; }
+.luxury-card:hover .overlay-inner, .luxury-card.active .overlay-inner { transform: translateY(0); }
+
+/* Botones y Formulario */
+.btn-outline-gold {
+    border: 1px solid var(--oro);
+    color: var(--oro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+.btn-outline-gold:hover { background: var(--oro); color: white; }
+
+.luxury-input {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    padding: 15px 5px;
+    background: transparent;
+}
+
+.luxury-input:focus {
+    box-shadow: none;
+    border-color: var(--oro);
+    background: transparent;
+}
+
+/*ajustes finos en móvil */
+@media (max-width: 768px) {
+    .luxury-card { height: 350px; }
+    .hero h1 { font-size: 3rem; }
+}
+
+
+/* página de menú */
+.bg-cream { background-color: #fdfbf7; }
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+@media (max-width: 576px) {
+    .display-3 { font-size: 2.5rem; }
+    .luxury-card { height: 300px !important; } /* Un poco más bajas en móvil para ver más platos */
+}
